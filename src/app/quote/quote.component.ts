@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import{Quote}from '../quote';
 import { from } from 'rxjs';
 
@@ -8,7 +8,7 @@ import { from } from 'rxjs';
   styleUrls: ['./quote.component.css']
 })
 
-export class quoteComponent implements OnInit{
+export class QuoteComponent implements OnInit{
   quotes:Quote[] = [
       {id:1, name:'Don’t wait. Make memories today. Celebrate your life!'  },
       {id:2,name:'Life has no limitations, except the ones you make.'},
