@@ -25,7 +25,11 @@
             <li>{{quote.name}} due on{{quote.completeDate|date|uppercase}}  </li>
           </ul>
         <button (click)='
-    toggleDetails(i)'>Toggle Quote Details</button>
+    toggleDetails(i)'>Quote Details</button>
+    <button (click)='
+                    likes(i)'>likes</button>
+                    <button (click)='
+                    Dislikes(i)'>Dislikes</button>                
     <!-- {{quote.author}} -->
     <app-quote-details *ngIf='quote.showAuthor' [quote]='quote' (isDelete)='deleteQuote($event,i)'></app-quote-details>
 
