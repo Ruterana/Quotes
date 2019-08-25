@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input,Output,EventEmitter} from '@angular/core';
 import {  Quote } from '../quote';
 
 @Component({
@@ -8,30 +8,18 @@ import {  Quote } from '../quote';
 })
 export class QuoteDetailsComponent implements OnInit {
   @Input() quote: Quote;
-  constructor() { }
+  @Output() isDelete = new EventEmitter<boolean>();
 
-  ngOnInit() {
+  quoteDelete(erase:boolean){
+    this.isDelete.emit(erase);
   }
+  constructor() {}
 
+  ngOnInit(){ }
 }
 
 
-// import { Component, OnInit, Input } from '@angular/core';
-// import { Goal } from '../goal';
 
-// @Component({
-//   selector: 'app-goal-detail',
-//   templateUrl: './goal-detail.component.html',
-//   styleUrls: ['./goal-detail.component.css']
-// })
-// export class GoalDetailComponent implements OnInit {
 
-//   @Input() goal: Goal;
-//   constructor() { }
-
-//   ngOnInit() {
-//   }
-
-// }
 
 

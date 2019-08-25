@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import{Quote}from '../quote';
+// import { globalAgent } from 'https';
 // import { from } from 'rxjs';
 
 @Component({
@@ -10,13 +11,21 @@ import{Quote}from '../quote';
 
 export class QuoteComponent implements OnInit{
   quotes:Quote[] = [
-      {id:1, name:'Don’t wait. Make memories today. Celebrate your life!',author:'James'  },
-      {id:2,name:'Life has no limitations, except the ones you make.',author:'John'},
-      {id:3,name:'We learn by mistakes',author:'charlene'},
-      {id:4,name:'Do what is right, not what is easy nor what is popular.',author:'walter'},
-      {id:5,name:'Success is not how high you have climbed, but how you make a positive difference to the world.',author:'Aine'}
+      new Quote(1,'H.R','Don’t wait. Make memories today. Celebrate your life!','James'  ),
+      new Quote(2,'M.Y','Life has no limitations, except the ones you make.','John'),
+      new Quote(3,'M.T','We learn by mistakes','charlene'),
+      new Quote(4,'R.E','Do what is right, not what is easy nor what is popular.','walter'),
+      new Quote(5,'W.T','Success is not how high you have climbed, but how you make a positive difference to the world.','Aine')
     
     ];
+    toggleDetails(index){
+      this.quotes[index].showAuthor = !this.quotes[index].showAuthor;
+    }
+    deleteQuote(isDelete, index){
+      if (isDelete) {
+        this.quotes.splice(index,1);
+      }
+    }
     constructor() { }
 
     ngOnInit() {

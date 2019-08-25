@@ -8,21 +8,25 @@
 
 <div style="text-align:center">
   <h1>
-    Welcome to  Quote app{{ title }}!
+    Welcome to Quote app{{ title }}!
   </h1>
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUNn_h6CuYhdvesFHHlVeWqAWs0Mq1qpqaHr6t5PkQ0LEErvdy" width="300" alt="Angular Logo">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUNn_h6CuYhdvesFHHlVeWqAWs0Mq1qpqaHr6t5PkQ0LEErvdy"
+    width="300" alt="Angular Logo">
 </div>
 
-   <div>
-    <h1>My insipiration Quote</h1> 
-    <!-- <p>this is inspiration is {{quote }}</p>  -->
-    
-    <ul>
-      <li *ngFor='let quote of quotes'>
-        {{quote.name}}
-        <!-- {{quote.author}} -->
-        <app-quote-details [quote]='quote'></app-quote-details>
-      </li>
-    </ul>
-    </div>
-    
+<div>
+  <h1>My insipiration Quote</h1>
+  <!-- <p>this is inspiration is {{quote }}</p>  -->
+
+
+  <div *ngFor='let quote of quotes;let i = index' >
+         
+          <ul>
+            <li>{{quote.name}} </li>
+          </ul>
+        <button (click)='
+    toggleDetails(i)'>Toggle Quote Details</button>
+    <!-- {{quote.author}} -->
+    <app-quote-details *ngIf='quote.showAuthor' [quote]='quote' (isDelete)='deleteQuote($event,i)'></app-quote-details>
+
+  </div>
