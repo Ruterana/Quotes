@@ -1,4 +1,5 @@
-export class  Quote{
+export class  Quote {
     id: number;
     name: string;
+    author:string;
   }
