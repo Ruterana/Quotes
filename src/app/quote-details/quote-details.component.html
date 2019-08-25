@@ -16,5 +16,7 @@ quote-details works -->
   <p>
     {{quote.author}}
   </p>
+  <p>This Quote published  in {{quote.completeDate|dateCount}} days</p>
   <button (click)= 'quoteDelete(true)'>Delete</button> 
+  
   
