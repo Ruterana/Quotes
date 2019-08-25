@@ -5,6 +5,7 @@
     </li>
 </ul> -->
 
+<div class="container-fluid">
 
 <div style="text-align:center">
   <h1>
@@ -17,8 +18,10 @@
 <div>
   <h1>My insipiration Quote</h1>
   <!-- <p>this is inspiration is {{quote }}</p>  -->
-
-
+<hr>
+<div class="row">
+  <div class="card">
+<div class="col-md-6">
   <div *ngFor='let quote of quotes;let i = index' >
          
           <ul>
@@ -32,5 +35,11 @@
                     Dislikes(i)'>Dislikes</button>                
     <!-- {{quote.author}} -->
     <app-quote-details *ngIf='quote.showAuthor' [quote]='quote' (isDelete)='deleteQuote($event,i)'></app-quote-details>
-
+    
+  <hr>
+  
+</div>
   </div>
+  </div>
+  </div>
+</div>
