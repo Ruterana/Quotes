@@ -22,7 +22,7 @@
   <div *ngFor='let quote of quotes;let i = index' >
          
           <ul>
-            <li>{{quote.name}} </li>
+            <li>{{quote.name}} due on{{quote.completeDate|date|uppercase}}  </li>
           </ul>
         <button (click)='
     toggleDetails(i)'>Toggle Quote Details</button>
